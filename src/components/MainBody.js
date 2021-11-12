@@ -1,5 +1,6 @@
-import { FrontPage } from "./FrontPage"
-import { Post } from "./Post"
+import { FrontPage } from "./FrontPage";
+import { Post } from "./Post";
+import { posts } from "../data/posts";
 
 export const MainBody = () => {
     return (
@@ -21,7 +22,15 @@ export const MainBody = () => {
                 </div>
             </div>
             <div>
-                <Post />
+                {posts.map(post => 
+                    <Post key={post.id}
+                        image={post.image}
+                        title={post.title}
+                        description={post.description}
+                        demoLink={post.demoLink}
+                        date={post.date}
+                    />
+                )}
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 export const FrontPage = () => {
     return (
         <div className="flex bg-gray-100 justify-center">
-            <div className="flex flex-row w-2/3 justify-between px-10 py-10">
+            <div className="flex flex-row w-2/3 justify-between pl-0 pr-10 py-10">
                 <div className="w-2/3 pl-5 pr-14">
                     <p className="pb-2 leading-relaxed font-sans">Hello, I'm <b className="text-gray-700">Jose Velez</b></p>
                     <p className="py-2 leading-relaxed font-sans">
@@ -24,7 +24,7 @@ export const FrontPage = () => {
                     </p>
                 </div>
                 <div className="flex justify-center w-1/3">
-                    <img src="/images/48886275.jpg" className="rounded-full" alt="profile" />
+                    <img src="/images/48886275.jpg" className="rounded-full flex-shrink-1" alt="profile" />
                 </div>
             </div>
         </div>
