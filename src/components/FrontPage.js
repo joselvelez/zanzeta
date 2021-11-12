@@ -11,7 +11,7 @@ export const FrontPage = () => {
                         During the COVID pandemic in 2020, I was laid off and I made the one of the best decisions of my life - I resolved to learn to code.
                     </p>
                     <p className="py-2 leading-relaxed font-sans text-sm">
-                    As I continue my new journey, I will be sharing some of my projects here. The goal is to demonstrate my growth and competence in building primarily web3 applications. I am always looking for opportunities to work with others and collaborate on new or existing projects. Just reach and lets talk!
+                    As I continue my new journey, I will be sharing some of my projects here. The goal is to demonstrate my growth and competence in building primarily web3 applications. I am always looking for opportunities to work with others and collaborate on new or existing projects. Just reach out and lets talk!
                     </p>
                     <p className="py-2 leading-relaxed font-sans">
                         <b className="leading-relaxed font-sans text-sm">Current preferred stack</b> |
