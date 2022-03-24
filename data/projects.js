@@ -1,10 +1,11 @@
-export const posts = [
+export const projects = [
     {
         id: 4,
         date: "March 2021",
         images: [
             'nft_punchcard.png',
         ],
+        demoVideo: 'https://www.youtube.com/watch?v=pAnLQQ6LFuc',
         title: "MerkleMe API",
         demoLink: "www.merkleme.io",
         titleLink: 'merkleme',
@@ -19,6 +20,7 @@ export const posts = [
         images: [
             'nft_punchcard.png',
         ],
+        demoVideo: 'https://www.youtube.com/watch?v=pAnLQQ6LFuc',
         title: "NFT Punchcard Concept",
         demoLink: "https://nft-punchcard.onrender.com/",
         titleLink: 'nft-punchcard-concept',
@@ -35,7 +37,7 @@ export const posts = [
             'team_america_character_page.png',
             'team_america_battle_page.png'
         ],
-        demoVideo: 'team_america_demo.mp4',
+        demoVideo: 'https://www.youtube.com/watch?v=pAnLQQ6LFuc',
         title: "Team America NFT Game",
         demoLink: "https://team-america-nft-game.onrender.com/",
         titleLink: 'buildspace-project-nft-game',
@@ -50,6 +52,7 @@ export const posts = [
         images: [
             'portfolio_waveportal.png',
         ],
+        demoVideo: 'https://www.youtube.com/watch?v=pAnLQQ6LFuc',
         title: "Wave Portal web3 dApp",
         demoLink: "https://wave-portal.onrender.com/",
         titleLink: 'buildspace-project-waveportal',

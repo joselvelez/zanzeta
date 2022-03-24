@@ -1,9 +1,14 @@
-import { Github, } from '@icons-pack/react-simple-icons';
+import { fs } from 'fs'
+import path from 'path';
 import Image from "next/image";
-import { posts } from "../data/projects";
+import ReactPlayer from 'react-player';
 
 const ProjectDetail = ({ projectName }) => {
-    const project = posts.filter(item => item.titleLink === projectName);
+    const projectsDir = path.join(process.cwd(), 'data/projects.json');
+    const projectsFile = fs.readFileSync(projectsDir);
+    const projectsData = JSON.parse((projectsFile).toString());
+
+    const project = projectsData.filter(item => item.titleLink === projectName);
 
     return (
         <div className="md:flex justify-between px-4 sm:px-0">
@@ -16,8 +21,11 @@ const ProjectDetail = ({ projectName }) => {
                     className="rounded-xl"
                 />
                 <div className='bg-red-300'>
-                    <div>
-                        sup
+                    <div className="sm:w-full">
+                        {project[0].demoVideo ? 
+                            <ReactPlayer url={project[0].demoVideo} width='100%' height='100%' />
+                            : ''
+                        }
                     </div>
                     <div>
                         sup
@@ -59,6 +67,14 @@ const ProjectDetail = ({ projectName }) => {
             </div>
         </div>
     )
+}
+
+export async function GetStaticProps(context) {
+    return {
+        props: {
+            
+        }
+    }
 }
 
 export default ProjectDetail;

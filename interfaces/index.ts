@@ -1,8 +1,11 @@
 export type ProjectType = {
     id: number
     date: Date
-    imageURI: string
-    title: string
+    images: string[]
     demoLink: string
+    titleLink: string
+    github: string
+    techStack: string
     description: string
+    summary: string
 }
