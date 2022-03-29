@@ -1,31 +1,18 @@
-import { promises as fs } from 'fs';
-import path from 'path';
-import { useRouter } from "next/router";
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import ProjectDetail from "../../components/ProjectDetail";
 import { ProjectType } from "../../interfaces";
+import { projects } from "../../data/projects";
 
-const Project: NextPage = ({ project }: {project: ProjectType}) => {
-    const router = useRouter();
-    const { projectName } = router.query;
-    
+const Project: NextPage = ({ project }: {project: ProjectType}) => {    
     return (
-        <div className="container mx-auto max-w-7xl sm:px-6 md:px-8 lg:px-8 bg-white-400">
-            <Header />
+        <div>
             <ProjectDetail project={project} />
-            <Footer />
         </div>
     )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const projectsDir = path.join(process.cwd(), 'data/projects.json');
-    const projectsFile = fs.readFile(projectsDir);
-    const projectsData = JSON.parse((await projectsFile).toString());
-
-    const paths = projectsData.map((item: ProjectType) => {
+    const paths = projects.map((item: ProjectType) => {
         return {
             params: {
                 projectName: `${item.titleLink}`
@@ -38,14 +25,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
 }
 
-export const getStaticProps: GetStaticProps = async ({ projectName }) => {
-    const projectsDir = path.join(process.cwd(), 'data/projects.json');
-    const projectsFile = fs.readFile(projectsDir);
-    const projectsData = JSON.parse((await projectsFile).toString());
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    console.log(params);    
+    const project = projects.filter(item => item.titleLink === params.projectName)
 
     return {
         props: {
-            project: 'merkleme'
+            project: project[0]
         }
     }
 }

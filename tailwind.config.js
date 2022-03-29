@@ -15,5 +15,8 @@ module.exports = {
   variants: {
     display: ['responsive', 'group-hover']
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+  ],
 }
